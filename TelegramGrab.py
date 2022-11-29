@@ -223,3 +223,34 @@ print('----- Started ----\r\n\r\n')
 with client:
 	client.loop.run_until_complete(main())
 print('\r\n\r\n----- Done    ----')
+
+
+### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###
+###                         HOW TO COMPILE                           ###
+### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###
+
+### STEP 1
+### Use: PYINSTALLER
+###		https://www.geeksforgeeks.org/convert-python-script-to-exe-file/
+###		https://pyinstaller.org/en/stable/usage.html#cmdoption-D        
+### MSVS: Menu -> View -> Other Windows -> Python Environments ... Packages (PyPl), pip -> install
+### MSVS: Menu -> View -> Other Windows -> Python Environments ... Packages (PyPl), pyinstaller -> install
+### MSVS: Menu -> View -> Terminal
+### > py -m pip -V
+### > py -m pip install pyinstaller
+
+### AND STEP 2
+### > py -m pyinstaller --onefile TelegramGrab.py
+
+### OR STEP 3
+### Use: auto-py-to-exe
+###		https://github.com/brentvollebregt/auto-py-to-exe
+###		https://www.tomshardware.com/how-to/create-python-executable-applications
+### MSVS: Menu -> View -> Other Windows -> Python Environments ... Packages (PyPl), pip -> install
+### MSVS: Menu -> View -> Other Windows -> Python Environments ... Packages (PyPl), auto-py-to-exe -> install
+### MSVS: Menu -> View -> Terminal
+### > py -m pip -V
+### > py -m pip install auto-py-to-exe
+### Copy pyinstaller.exe to %PROGRAM_FILES\Python3\Scripts
+### RUN
+### %PROGRAM_FILES\Python3\Scripts\auto-py-to-exe.exe
