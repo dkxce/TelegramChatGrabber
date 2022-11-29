@@ -14,6 +14,7 @@ import codecs
 import configparser
 import json
 import pandas as pd
+import time
 
 from datetime import date, datetime, timedelta, timezone
 from re import U
@@ -56,7 +57,7 @@ def write_msg_to_file(text_file, message):
 	text_file.write(str(message.id) + ";\t")
 	text_file.write(utc_to_local(message.date).strftime("%H:%M:%S %d.%m.%Y") + ";\t")
 	text_file.write(GetUserById(message.sender_id) + ";\t")
-	if not message.message:
+	if (not message.message) or (len(message.message) == 0):
 		text_file.write(' ')
 	else:
 		text_file.write(message.message.replace('\n',' \t').replace(';','.,'))
@@ -226,6 +227,7 @@ print('----- Started ----\r\n\r\n')
 with client:
 	client.loop.run_until_complete(main())
 print('\r\n\r\n----- Done    ----')
+time.sleep(2)
 
 
 ### !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###
