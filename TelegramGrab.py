@@ -56,7 +56,10 @@ def write_msg_to_file(text_file, message):
 	text_file.write(str(message.id) + ";\t")
 	text_file.write(utc_to_local(message.date).strftime("%H:%M:%S %d.%m.%Y") + ";\t")
 	text_file.write(GetUserById(message.sender_id) + ";\t")
-	text_file.write(message.message.replace('\n',' \t').replace(';','.,'))
+	if not message.message:
+		text_file.write(' ')
+	else:
+		text_file.write(message.message.replace('\n',' \t').replace(';','.,'))
 	text_file.write('\r\n')
 
 # ----------------------------------------------- # DUMP FUNCTIONS # ----------------------------------------------- #
