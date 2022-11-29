@@ -1,0 +1,28 @@
+{
+	"api_id": 0,
+	"api_hash": "",
+	"username": "",
+	"save_to_full": 1,
+	"save_to_excel": 1,
+	"users":
+	[
+		{ 
+			"uid": 916052,
+			"name": "UserA"
+		},
+		{
+			"uid": 916053,
+			"name": "UserB"
+		}
+	],
+	"channels":
+	[
+		{ 
+			"no": 1,
+			"name": "Tumka_TM_Chat",
+			"url": "https://t.me/Tumka_TM_Chat",
+			"min_msg_id": 0,
+			"user_filter": [916052,916053]
+		}
+	]
+}
